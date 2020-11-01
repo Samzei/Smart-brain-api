@@ -10,7 +10,7 @@ const db = knex({
     host : '127.0.0.1',
     user : '',
     password : '',
-    database : 'test'
+    database : 'smart-brain'
   }
 });
 
@@ -77,7 +77,7 @@ app.get('/profile/:id', (req, res) => {
       if (user.length) {
         res.json(user[0])
       } else {
-        res.status(400).json('ot found')
+        res.status(400).json('not found')
       }
     })
     .catch(err => res.status(400).json('error getting user'))
@@ -94,6 +94,6 @@ app.put('/image', (req, res) => {
   .catch(err => res.status(400).json('unable to get entries'))
 })
 
-app.listen(process.env.PORT || 3001, ()=> {
-  console.log(`................................${process.env.PORT}`);
+app.listen(3000, ()=> {
+  console.log('error');
 })
